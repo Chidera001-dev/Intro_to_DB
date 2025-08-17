@@ -1,0 +1,13 @@
+-- task_4.sql
+-- Script that prints the full description of the table books
+-- from the database passed as an argument
+
+SELECT COLUMN_NAME,
+       COLUMN_TYPE,
+       IS_NULLABLE,
+       COLUMN_KEY,
+       COLUMN_DEFAULT,
+       EXTRA
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'books'
+  AND TABLE_SCHEMA = DATABASE();
